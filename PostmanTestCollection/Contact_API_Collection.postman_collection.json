@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "b58bdddd-49ca-456a-96b4-b56dba916d1b",
+		"name": "Contact_API_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostContactList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"Identification\": {\n            \"FirstName\": \"Bob\",\n            \"LastName\": \"Fredrick\",\n            \"DOB\": \"1989-06-21\",\n            \"Gender\": \"M\",\n            \"Title\": \"CEO\"\n        },\n        \"Communication\": [\n            {\n                \"type\": \"email\",\n                \"value\": \"majid@gmail.com\",\n                \"preferred\": \"true\"\n            },\n            {\n                \"type\": \"cell\",\n                \"value\": \"+1234699098\"\n            }\n        ],\n        \"Address\": [\n            {\n                \"type\": \"Home\",\n                \"number\": \"6420\",\n                \"street\": \"Cabell\",\n                \"Unit\": \"\",\n                \"City\": \"Springfield\",\n                \"State\": \"VA\",\n                \"zipcode\": \"6250\"\n            }\n        ]\n    },\n    {\n        \"Identification\": {\n            \"FirstName\": \"Bob\",\n            \"LastName\": \"Marley\",\n            \"DOB\": \"1979-06-21\",\n            \"Gender\": \"M\",\n            \"Title\": \"Manager\"\n        },\n        \"Communication\": [\n            {\n                \"type\": \"email\",\n                \"value\": \"Bob@gmail.com\",\n                \"preferred\": \"true\"\n            },\n            {\n                \"type\": \"cell\",\n                \"value\": \"+1234699098\"\n            }\n        ],\n        \"Address\": [\n            {\n                \"type\": \"Home\",\n                \"number\": \"6420\",\n                \"street\": \"Cabell\",\n                \"Unit\": \"\",\n                \"City\": \"Springfield\",\n                \"State\": \"VA\",\n                \"zipcode\": \"6250\"\n            }\n        ]\n    }\n]"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contacts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContactList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contacts?limit=80",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contact?fname=Bob&lname=Fredrick&dob=1989-06-21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "fname",
+							"value": "Bob"
+						},
+						{
+							"key": "lname",
+							"value": "Fredrick"
+						},
+						{
+							"key": "dob",
+							"value": "1989-06-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutContact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Identification\":{\n\"FirstName\": \"Majid\", \"LastName\": \"Khan\", \"DOB\": \"1996-04-16\",\"Gender\":\"M\", \"Title\":\"New Title\"\n},\n\"Communication\":[\n{\"type\":\"cell\", \"value\":\"+9859099\", \"preferred\": \"true\"}],\n\"Address\":[\n{\"type\": \"Home\", \"number\":\"6420\", \"street\":\"Cabell\", \"Unit\": \"12\",\"City\": \"Springfield\", \"State\": \"VA\", \"zipcode\": \"689250\"}]}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contact?fname=Majid&lname=Khan&dob=1996-04-16",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "fname",
+							"value": "Majid"
+						},
+						{
+							"key": "lname",
+							"value": "Khan"
+						},
+						{
+							"key": "dob",
+							"value": "1996-04-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PatchContact",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n\t\"op\": \"replace\",\r\n\t\"path\": \"Identification/Title\",\r\n\t\"value\": \"Executive\"\r\n},\r\n{\r\n\t\"op\": \"add\",\r\n\t\"path\": \"Identification/Address\",\r\n\t\"value\":{\"type\": \"Work\", \"number\":\"2346\", \"street\":\"HallSt\", \"Unit\": \"B23\",\"City\": \"FallsChurch\", \"State\": \"VA\", \"zipcode\": \"56438\"}\r\n},\r\n{\r\n\t\"op\": \"remove\",\r\n\t\"path\": \"Identification/Address\",\r\n\t\"value\":{\"type\": \"Work\", \"number\":\"2346\", \"street\":\"HallSt\", \"Unit\": \"B23\",\"City\": \"FallsChurch\", \"State\": \"VA\", \"zipcode\": \"56438\"}\r\n}]"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contact?fname=Bob&lname=Fredrick&dob=1989-06-21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "fname",
+							"value": "Bob"
+						},
+						{
+							"key": "lname",
+							"value": "Fredrick"
+						},
+						{
+							"key": "dob",
+							"value": "1989-06-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/contact?fname=Bob&lname=Fredrick&dob=1989-06-21",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "fname",
+							"value": "Bob"
+						},
+						{
+							"key": "lname",
+							"value": "Fredrick"
+						},
+						{
+							"key": "dob",
+							"value": "1989-06-21"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
