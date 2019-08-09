@@ -3,12 +3,12 @@ Python Rest API. Supports full CRUD operations and also incremental updates.
 
 ## Running instructions
 `$ mkdir Project`
-`$ cd Project`
-`$ git clone git@github.com:xen/flask-project-template.git .`
-`$ make`
-`$ make run`
-
-Open http://127.0.0.1:5000/, customize project files and have fun.
+<br />`$ cd Project`
+<br />`$ git clone git@github.com:xen/flask-project-template.git .`
+<br />`$ make`
+<br />`$ make run`
+<br />
+<br />Open http://127.0.0.1:5000/, customize project files and have fun.
 
 # Create virtual environment for running
 If virtualenv is not installed, run pip install virtualenv
